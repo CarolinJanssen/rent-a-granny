@@ -1,0 +1,15 @@
+current directory: /Users/jean-hugueskabuiku/code/JeanHugueskab/rent-a-granny/NEW_PATH_HERE/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/jean-hugueskabuiku/.rvm/rubies/ruby-2.6.5/bin/ruby -I /Users/jean-hugueskabuiku/.rvm/rubies/ruby-2.6.5/lib/ruby/site_ruby/2.6.0 -r ./siteconf20200224-63821-mwj7ek.rb extconf.rb
+creating Makefile
+
+current directory: /Users/jean-hugueskabuiku/code/JeanHugueskab/rent-a-granny/NEW_PATH_HERE/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/jean-hugueskabuiku/code/JeanHugueskab/rent-a-granny/NEW_PATH_HERE/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/jean-hugueskabuiku/code/JeanHugueskab/rent-a-granny/NEW_PATH_HERE/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/local/opt/coreutils/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20200224-63821-1jl3qiq/skiptrace/internal

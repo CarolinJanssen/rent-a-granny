@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  # get 'appointments/grannies:references'
-  # get 'appointments/users:references'
   get "/grannies", to: "grannies#index"
   devise_for :users
   root to: 'pages#home'

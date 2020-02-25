@@ -1,10 +1,12 @@
 class ProfilesController < ApplicationController
   # Currently valid profile controller
+  # authorize under #show
   def index
     @profiles = policy_scope(Profile)
   end
 
   def show
+    authorize @profile
   end
 
   def new

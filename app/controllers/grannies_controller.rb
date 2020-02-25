@@ -1,38 +1,47 @@
 class GranniesController < ApplicationController
+  before_action :set_granny, only: [:show, :edit, :update, :destroy]
+  
   def index
-    @grannies = Granny.all
+    @grannies = policy_scope(Granny)
   end
 
   def show
+    authorize @granny
   end
 
   def new
     @granny = Granny.new
+    authorize @granny
   end
 
   def create
     @granny = Granny.new(granny_params)
+    authorize @granny
     if @granny.save
-      # redirect_to 
+      # redirect_to
     else
       render :new
     end
   end
 
   def edit
+    authorize @granny
   end
 
   def update
+    authorize @granny
     if @granny.update(granny_params)
-      # redirect_to 
+      # redirect_to
     else
       render :edit
     end
+
   end
 
   def destroy
     @granny.destroy
-    # redirect_to 
+    # redirect_to
+    authorize @granny
   end
 
   private

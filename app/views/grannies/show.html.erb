@@ -1,2 +1,51 @@
-<h1>Grannies#show</h1>
-<p>Find me in app/views/grannies/show.html.erb</p>
+<%= render 'shared/navbar' %>
+<div class="row">
+  <%= link_to "Back" , grannies_path, class: "btn btn-gradient w-20 ml-5 mr-0 mt-3"%>
+  <div class="container p-3 w-100 ml-4">
+    <div class="card p-3 mb-3">
+      <div class="row">
+        <div class="col-md-2">
+          <img src="https://images.pexels.com/photos/3171128/pexels-photo-3171128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="w-100 rounded">
+        </div>
+        <div class="col-md-6 text-justify">
+          <h3>This is Granny Margaret's Profile</h3>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+        </div>
+        <div class="col-md-4">
+          <div class= "bg-white border p-3 sticky-top">
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>5 Hours</strong></p>
+              <p>50€</p>
+            </div>
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>Service Fee</strong></p>
+              <p>9,99€</p>
+            </div>
+            <div class="d-flex justify-content-between mt-3 border-bottom ">
+              <p><strong>Happy Kids</strong></p>
+              <p>free</p>
+            </div>
+            <div class="d-flex justify-content-between mt-3">
+              <p><strong>Total</strong></p>
+              <p><strong>59,99€</strong></p>
+            </div>
+            <a href="#" class="btn btn-gradient w-100">Book now!</a>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="text-justify">
+            <h2>Offered Activities</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+          </div>
+          <div class="text-justify">
+            <h2>Important notes</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

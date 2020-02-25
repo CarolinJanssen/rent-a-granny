@@ -15,6 +15,12 @@ ActiveRecord::Schema.define(version: 2020_02_25_135207) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "appointments", force: :cascade do |t|
     t.string "start_date"
     t.string "end_date"
@@ -30,10 +36,11 @@ ActiveRecord::Schema.define(version: 2020_02_25_135207) do
     t.text "first_name"
     t.text "last_name"
     t.integer "age"
-    t.text "activities"
     t.bigint "user_id"
+    t.bigint "activity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["activity_id"], name: "index_grannies_on_activity_id"
     t.index ["user_id"], name: "index_grannies_on_user_id"
   end
 
@@ -62,5 +69,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_135207) do
 
   add_foreign_key "appointments", "grannies"
   add_foreign_key "appointments", "users"
+  add_foreign_key "grannies", "activities"
   add_foreign_key "grannies", "users"
 end

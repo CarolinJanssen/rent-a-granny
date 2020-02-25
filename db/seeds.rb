@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Activity.destroy_all if Rails.env.development?
+Activity.create(name: "Drawing")
+Activity.create(name: "Reading")
+Activity.create(name: "Swimming")
+Activity.create(name: "Doing Homework")
+Activity.create(name: "Crafting")
+Activity.create(name: "Dancing")
+Activity.create(name: "Playground")
+
+p 'seeds done right'

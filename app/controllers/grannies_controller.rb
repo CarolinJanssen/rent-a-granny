@@ -11,6 +11,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
+    @activities = Activity.all
     authorize @granny
   end
 
@@ -47,7 +48,7 @@ class GranniesController < ApplicationController
   private
 
   def granny_params
-    params.require(:granny).permit(:first_name, :last_name, :age, :activities)
+    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id)
   end
 
   def set_granny

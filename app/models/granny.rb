@@ -1,0 +1,2 @@
+class Granny < ApplicationRecord
+end

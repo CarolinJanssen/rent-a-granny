@@ -1,6 +1,6 @@
 class GranniesController < ApplicationController
   def index
-    @grannies = Granny.all
+    @grannies = policy_scope(Granny)
   end
 
   def show
@@ -12,19 +12,21 @@ class GranniesController < ApplicationController
 
   def create
     @granny = Granny.new(granny_params)
+    authorize @granny
     if @granny.save
-      # redirect_to 
+      # redirect_to
     else
       render :new
     end
   end
 
   def edit
+    authorize @granny
   end
 
   def update
     if @granny.update(granny_params)
-      # redirect_to 
+      # redirect_to
     else
       render :edit
     end
@@ -32,7 +34,7 @@ class GranniesController < ApplicationController
 
   def destroy
     @granny.destroy
-    # redirect_to 
+    # redirect_to
   end
 
   private

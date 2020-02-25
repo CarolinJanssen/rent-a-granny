@@ -1,4 +1,5 @@
-class ProfileController < ApplicationController
+class ProfilesController < ApplicationController
+  # Currently valid profile controller
   def index
     @profiles = policy_scope(Profile)
   end
@@ -46,5 +47,4 @@ class ProfileController < ApplicationController
   def set_profile
     @profile = Profile.find(params[:id])
   end
-end
 end

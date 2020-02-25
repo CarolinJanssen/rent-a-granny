@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(granny_params)
+    @profile = Profile.new(profile_params)
     authorize @profile
     if @profile.save
       # redirect_to
@@ -25,7 +25,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    if @profile.update(granny_params)
+    if @profile.update(profile_params)
       # redirect_to
     else
       render :edit
@@ -39,11 +39,11 @@ class ProfilesController < ApplicationController
 
   private
 
-  def granny_params
+  def profile_params
     params.require(:profile).permit(:first_name, :last_name, :age, :activities)
   end
 
-  def set_granny
+  def set_profile
     @profile = Profile.find(params[:id])
   end
 end

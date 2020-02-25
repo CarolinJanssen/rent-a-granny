@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  # Currently valid profile controller
   def index
     @profiles = policy_scope(Profile)
   end

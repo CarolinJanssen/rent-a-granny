@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rent A Granny</title>
+    <%= csrf  _meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+  </head>
+  <body>
+    <img class="avatar" alt="avatar" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fhoroscopes.lovetoknow.com%2Fcompatible-astrological-signs%2Fgemini-soulmate&psig=AOvVaw1OtFI1BodmMNuE47rGv1Jq&ust=1582807420140000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMD9kKSf7-cCFQAAAAAdAAAAABAI" />
+    <p> Hi we are Mark and Rabea
+      I'm the director of a web agency
+    digital and my spouse works in finance as a
+    trader.
+    We work mainly in the centre of Paris,
+    excluding business trips once or twice a month.
+    Théo is already enrolled at the Massillon primary school in the
+    Fourth, and we looking one.
+    We don't have pets and we're no smokers.
+  Please feel free to contact us for more information.</p>
+    <%= render 'shared/footer' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag 'application' %>
+  </body>
+</html>

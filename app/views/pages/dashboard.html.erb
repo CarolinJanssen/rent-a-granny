@@ -1,115 +1,44 @@
-<div class = "page_container">
-  <h1>Grannies</h1>
-
-  <div class='booking-sub'>
-  <p>Booked for upcomming occasions</p>
-  </div>
-
-<div class = "results">
-  <div class="card-trip">
-    <img src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Emilia</h2>
-        <p>Age: 81</p>
-        <p>Acitivities: Gooing to the park, Reading books</p>
+<%= render 'shared/navbar' %>
+<div class="container col-md-11 mt-3">
+  <h1 class="text-left pt-3 mb-3">Future Grannies</h1>
+  <p class = "text-left pt-1 mb-1">Book grannies for upcoming occasions!</p>
+  <div class="card-deck">
+    <% @future_appointments.each do |appointment| %>
+    <div class="card mb-4">
+      <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5><%= appointment.start_date.strftime("%B") %></h5>
+        <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
+        <p class="card-text"> Age: <%=appointment.granny.age%></p>
+        <p> Activity: <%=appointment.granny.activity.name%></p>
+        <div>
+        <p> Price: 22€</p>
+        <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
+        </div>
       </div>
-      <h2 class="card-trip-pricing">€39.99</h2>
     </div>
+    <% end %>
   </div>
-  <div class="card-trip">
-    <img src="https://www.optikwolf.de/wp-content/uploads/2019/03/Alte-Frau-2019.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Corinna</h2>
-        <p>Age: 71</p>
-        <p>Acitivities: Listening to Prussian marches, Baking</p>
+  <a class="btn btn-gradient" href="/">Explore rent a granny!</a>
+  <h1 class="text-left pt-3 mb-3">Grannies from the past</h1>
+  <p class = "text-left pt-1 mb-1">Which grannies did you book?</p>
+  <div class="card-deck">
+    <% @past_appointments.each do |appointment| %>
+    <div class="card mb-4">
+      <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5><%= appointment.start_date.strftime("%B") %></h5>
+        <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
+        <p class="card-text"> Age: <%=appointment.granny.age%></p>
+        <p> Activity: <%=appointment.granny.activity.name%></p>
+        <div>
+        <p> Price: 22€</p>
+        <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
+        </div>
       </div>
-      <h2 class="card-trip-pricing">€29.99</h2>
     </div>
-  </div>
-  <div class="card-trip">
-    <img src="https://www.thepostmillennial.com/wp-content/uploads/2019/07/Queen-puts-down-purse-and-picks-up-shovel-just-like-her-grandmother.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Constanze</h2>
-        <p>Age: 61</p>
-        <p>Acitivities: Riding, Cooking pancakes and waffles</p>
-      </div>
-      <h2 class="card-trip-pricing">€49.99</h2>
-    </div>
-  </div>
-  <div class="card-trip">
-    <img src="https://oncologynews.com.au/wp-content/uploads/grandmother-and-grandchild-in-park_oncology-news-australia.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Cosima</h2>
-        <p>Age: 69</p>
-        <p>Acitivities: Joga, Reading e-papers, Riding horses</p>
-      </div>
-      <h2 class="card-trip-pricing">€29.99</h2>
-    </div>
+    <% end %>
   </div>
 </div>
 
 
-
-
-
-<div class='booking-sub'>
-  <h1>Booked in the past</h1>
-</div>
-
-<div class = "results">
-  <div class="card-trip">
-    <img src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Emilia</h2>
-        <p>Age: 81</p>
-        <p>Acitivities: Gooing to the park, Reading books</p>
-      </div>
-      <h2 class="card-trip-pricing">€39.99</h2>
-    </div>
-  </div>
-  <div class="card-trip">
-    <img src="https://www.optikwolf.de/wp-content/uploads/2019/03/Alte-Frau-2019.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Corinna</h2>
-        <p>Age: 71</p>
-        <p>Acitivities: Listening to Prussian marches, Baking</p>
-      </div>
-      <h2 class="card-trip-pricing">€29.99</h2>
-    </div>
-  </div>
-  <div class="card-trip">
-    <img src="https://www.thepostmillennial.com/wp-content/uploads/2019/07/Queen-puts-down-purse-and-picks-up-shovel-just-like-her-grandmother.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Constanze</h2>
-        <p>Age: 61</p>
-        <p>Acitivities: Riding, Cooking pancakes and waffles</p>
-      </div>
-      <h2 class="card-trip-pricing">€49.99</h2>
-    </div>
-  </div>
-  <div class="card-trip">
-    <img src="https://oncologynews.com.au/wp-content/uploads/grandmother-and-grandchild-in-park_oncology-news-australia.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Cosima</h2>
-        <p>Age: 69</p>
-        <p>Acitivities: Joga, Reading e-papers, Riding horses</p>
-      </div>
-      <h2 class="card-trip-pricing">€29.99</h2>
-    </div>
-</div>
-
-
-
-
-
-
-  </div>
-</div>

@@ -9,7 +9,11 @@
         </div>
         <div class="col-md-6 text-justify">
           <h3>This is Granny <%=@granny.first_name %>'s Profile</h3>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+          <p><strong>First name:</strong> <%=@granny.first_name %></p>
+          <p><strong>Last name:</strong> <%=@granny.last_name %></p>
+          <p><strong>Age:</strong> <%=@granny.age %></p>
+          <p><strong>District:</strong> Kreuzberg </p>
+          <p><strong>Description:</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." </p>
         </div>
         <div class="col-md-4">
           <div class= "bg-white border p-3 sticky-top">
@@ -34,9 +38,8 @@
         </div>
         <div class="col-md-8">
           <div class="text-justify">
-            <h2>Offered Activities</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </p>
+            <h2>Offered Activity</h2>
+            <p>- <%= @granny.activity.name%> </p>
           </div>
           <div class="text-justify">
             <h2>Important notes</h2>

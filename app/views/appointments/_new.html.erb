@@ -1,0 +1,5 @@
+ <%= simple_form_for [@granny, @appointment] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.submit "Book Your Granny", class: "btn btn-gradient w-100" %> 
+<% end %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get "/grannies", to: "grannies#index"
+  get "/profiles", to: "profiles#update"
   devise_for :users
   root to: 'pages#home'
   resources :grannies do

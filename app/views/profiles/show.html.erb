@@ -11,3 +11,8 @@
   We don't have pets and we're no smokers.
 Please feel free to contact us for more information.</p>
 
+<%= @user.first_name %>
+<%= @user.last_name %>
+<%= @user.number_of_kids %>
+<%= link_to 'Edit',  edit_profile_path(@user)%>
+

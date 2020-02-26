@@ -1,6 +1,6 @@
 <div class="container d-flex my-3 justify-content-around">
   <div class="form card-form my-3 w-100">
-    <%= simple_form_for @user, url: edit_profile_path(@user) do |f| %>
+    <%= simple_form_for @user, url: profile_path do |f| %>
       <div class="row">
         <div class="col">
           <%= f.input :first_name %>

@@ -7,7 +7,7 @@
     <div class="card mb-4">
       <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5><%= appointment.start_date.strftime("%B") %></h5>
+        <h5><%= appointment.start_date.to_date.strftime("%B") %></h5>
         <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
         <p class="card-text"> Age: <%=appointment.granny.age%></p>
         <p> Activity: <%=appointment.granny.activity.name%></p>
@@ -27,7 +27,7 @@
     <div class="card mb-4">
       <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5><%= appointment.start_date.strftime("%B") %></h5>
+        <h5><%= appointment.start_date.to_date.strftime("%B") %></h5>
         <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
         <p class="card-text"> Age: <%=appointment.granny.age%></p>
         <p> Activity: <%=appointment.granny.activity.name%></p>

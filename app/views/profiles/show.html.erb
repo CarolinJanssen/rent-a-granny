@@ -42,7 +42,7 @@
                 </div>
                 <div class="d-flex justify-content-between">
                   <%= link_to 'Edit', granny_path(granny), class: "btn btn-gradient h-50" %>
-                  <%= link_to 'Delete', granny_path(granny), class: "btn btn-gradient h-50" %>
+                  <%= link_to "Delete", @grannies, method: :delete, data: { confirm: 'Sure?' }, class: "btn btn-gradient h-50" %>
                 </div>
               </div>
             </div>

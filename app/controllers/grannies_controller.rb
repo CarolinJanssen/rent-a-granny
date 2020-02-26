@@ -44,7 +44,7 @@ class GranniesController < ApplicationController
 
   def destroy
     @granny.destroy
-    redirect_to profile_path
+    redirect_to profile_path(@granny.profile)
     authorize @granny
   end
 

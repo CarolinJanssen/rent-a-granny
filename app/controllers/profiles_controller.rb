@@ -6,22 +6,22 @@ class ProfilesController < ApplicationController
     @users = policy_scope(User)
   end
 
-  # def show
-    # authorize @user
-  # end
+  def show
+    authorize @user
+  end
 
   def new
-    # @profile = Profile.new
+    @profile = Profile.new
   end
 
   def create
-    # @profile = Profile.new(profile_params)
-    # authorize @profile
-    # if @profile.save
-    #   # redirect_to
-    # else
-    #   render :new
-    # end
+    @profile = Profile.new(profile_params)
+    authorize @profile
+    if @profile.save
+      # redirect_to
+    else
+      render :new
+    end
   end
 
   def edit

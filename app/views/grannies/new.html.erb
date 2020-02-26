@@ -1,8 +1,5 @@
 <%= render 'shared/navbar' %>
 <div>	
-	<div class="buttonss">
-
-	</div>
 	<div class="banner h-4" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.pexels.com/photos/302083/pexels-photo-302083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
 	  <h2 class="granny_header">Your Granny:</h2>
 	</div>
@@ -16,6 +13,7 @@
       <%= f.input :last_name %>
       <%= f.input :age %>
       <%= f.association :activity %>
+      <%= f.input :photo, as: :file %>
       <br>
       <div class="row">
         <div class="col-md-2">

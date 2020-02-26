@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :set_profile, only: [:show, :edit, :update, :destroy]
   # Currently valid profile controller
   # authorize under #show
   def index

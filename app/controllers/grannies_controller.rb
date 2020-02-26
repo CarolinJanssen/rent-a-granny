@@ -11,6 +11,7 @@ class GranniesController < ApplicationController
 
   def new
     @granny = Granny.new
+    @activities = Activity.all
     authorize @granny
   end
 
@@ -18,7 +19,7 @@ class GranniesController < ApplicationController
     @granny = Granny.new(granny_params)
     authorize @granny
     if @granny.save
-      # redirect_to
+      redirect_to granny_path(@granny)
     else
       render :new
     end
@@ -31,23 +32,22 @@ class GranniesController < ApplicationController
   def update
     authorize @granny
     if @granny.update(granny_params)
-      # redirect_to
+      redirect_to granny_path(@granny)
     else
       render :edit
     end
-
   end
 
   def destroy
     @granny.destroy
-    # redirect_to
+    redirect_to grannies_path
     authorize @granny
   end
 
   private
 
   def granny_params
-    params.require(:granny).permit(:first_name, :last_name, :age, :activities)
+    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :photo)
   end
 
   def set_granny

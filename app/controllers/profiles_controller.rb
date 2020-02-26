@@ -7,7 +7,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    authorize @user
   end
 
   def new

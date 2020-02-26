@@ -17,4 +17,8 @@ class UserPolicy < ApplicationPolicy
     # record.user == user
     user
   end
+
+  def show?
+    true
+  end
 end

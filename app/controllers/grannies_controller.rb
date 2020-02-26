@@ -1,6 +1,6 @@
 class GranniesController < ApplicationController
   before_action :set_granny, only: [:show, :edit, :update, :destroy]
-  
+
   def index
     @grannies = policy_scope(Granny)
   end

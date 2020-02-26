@@ -1,25 +1,46 @@
 <%= render 'shared/navbar' %>
 <div class="container col-md-11 mt-3">
   <h1 class="text-left pt-3 mb-3">Future Grannies</h1>
-  <p class = "text-left pt-1 mb-1">Book grannies for upcoming occasions!</p>
-  <div class="card-deck">
-    <% @future_appointments.each do |appointment| %>
-    <div class="card mb-4">
-      <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5><%= appointment.start_date.to_date.strftime("%B") %></h5>
-        <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
-        <p class="card-text"> Age: <%=appointment.granny.age%></p>
-        <p> Activity: <%=appointment.granny.activity.name%></p>
-        <div>
-        <p> Price: 22€</p>
-        <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
+  <% if @future_appointments.empty? %>
+    <p class = "text-left pt-1 mb-1">Book your fantastic grannies for upcoming occasions!</p>
+      <div class="container">
+        <div class="cards">
+          <div class="card-categoryy">
+            <h1><i class="fas fa-users"></i> </h1>
+            <p>Connect with lovely eldery people from your district</p>
+          </div>
+
+          <div class="card-categoryy">
+            <h1><i class="fas fa-baby"></i> </h1>
+            <p>Have experienced grannies look after your kids</p>
+          </div>
+
+          <div class="card-categoryy">
+            <h1><i class="fas fa-puzzle-piece"></i> </h1>
+            <p>Gain a new family member</p>
+          </div>
         </div>
       </div>
-    </div>
+      <a class="btn btn-gradient" href="/">Explore get a granny!</a>
+    <% else %>
+    <p class = "text-left pt-1 mb-1">Your next amazing moments with your gorgious grannies!</p>
+      <div class="card-deck">
+        <% @future_appointments.each do |appointment| %>
+          <div class="card mb-4">
+            <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
+              <p> Activity: <%=appointment.granny.activity.name%></p>
+              <div>
+              <p> Date: <%= appointment.start_date.to_date %></p>
+              <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  </div>
-  <a class="btn btn-gradient" href="/">Explore get a granny!</a>
+
   <h1 class="text-left pt-3 mb-3">Grannies from the past</h1>
   <p class = "text-left pt-1 mb-1">Which grannies did you book?</p>
   <div class="card-deck">
@@ -27,12 +48,10 @@
     <div class="card mb-4">
       <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5><%= appointment.start_date.to_date.strftime("%B") %></h5>
         <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
-        <p class="card-text"> Age: <%=appointment.granny.age%></p>
         <p> Activity: <%=appointment.granny.activity.name%></p>
         <div>
-        <p> Price: 22€</p>
+        <p> Date: <%= appointment.start_date.to_date %></p>
         <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
         </div>
       </div>

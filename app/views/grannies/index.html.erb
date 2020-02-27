@@ -1,11 +1,18 @@
 <%= render 'shared/navbar' %>
+<div>
+  <div class="index-banner">
+    <h2 class="text-white text-center">Find the perfect Granny in your area:</h2>
+  </div>
+</div>
+
 <div class="container col-md-11 mt-3">
-  <h1 class="text-center pt-3 mb-3">Find the perfect Granny in your area</h1>
-  <!-- <h4 class="mb-3"><%=@grannies.length%> available in Kreuzberg</h4> -->
+  <h4 class="mb-3"><%=@grannies.length%> available in <%= params[:query] %></h4>
   <div class="card-deck">
     <% @grannies.each do |granny| %>
     <div class="card mb-4">
-      <%= cl_image_tag granny.photo.key, height: 170, width: 300, crop: :fill %>
+      <% if granny.photo.attached? %>
+      <%= cl_image_tag granny.photo.key, height: 170, width: 298, crop: :fill %>
+      <% end %>
       <div class="card-body">
         <h5 class="card-title"> <%= granny.first_name %></h5>
         <p class="card-text"> Age: <%=granny.age%></p>

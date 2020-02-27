@@ -28,7 +28,7 @@
               <p><strong>Total</strong></p>
               <p><strong>59,99€</strong></p>
             </div>
-            <%= render 'appointments/new' %>
+            <%= render 'appointments/new', granny: @granny, appointment: @appointment %>
           </div>
         </div>
         <div class="col-md-8">
@@ -45,5 +45,3 @@
     </div>
   </div>
 </div>
-
-

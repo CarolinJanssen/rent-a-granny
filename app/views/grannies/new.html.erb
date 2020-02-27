@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div>	
+<div>
 	<div class="banner h-4" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.pexels.com/photos/302083/pexels-photo-302083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
 	  <h2 class="granny_header">Your Granny:</h2>
 	</div>
@@ -12,17 +12,21 @@
       <%= f.input :first_name %>
       <%= f.input :last_name %>
       <%= f.input :age %>
+      <%= f.input :district %>
+      <%= f.input :description %>
+      <%= f.input :important_notes %>
+      <%= f.input :price %>
       <%= f.association :activity %>
       <%= f.input :photo, as: :file %>
       <br>
       <div class="row">
         <div class="col-md-2">
-      		<%= f.submit "Add Your Granny", class: "btn btn-gradient w-20" %> 
+      		<%= f.submit "Add Your Granny", class: "btn btn-gradient w-20" %>
   			</div>
   			<div class="col-md-8">
   			</div>
         <div class="col-md-2">
-     		  <%= link_to 'Back', grannies_path, class: "btn btn-gradient w-20 ml-5" %> 
+     		  <%= link_to 'Back', grannies_path, class: "btn btn-gradient w-20 ml-5" %>
   			</div>
   		</div>
       <% end %>

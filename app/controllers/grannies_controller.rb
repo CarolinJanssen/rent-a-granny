@@ -1,5 +1,6 @@
 class GranniesController < ApplicationController
   before_action :set_granny, only: [:show, :edit, :update, :destroy]
+
   # skip_after_action :verify_authorized, only: :index, unless: :skip_pundit?
   # skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
   
@@ -51,7 +52,7 @@ class GranniesController < ApplicationController
   private
 
   def granny_params
-    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :photo)
+    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :photo, :district, :description, :important_notes, :price)
   end
 
   def set_granny

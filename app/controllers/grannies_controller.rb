@@ -1,9 +1,6 @@
 class GranniesController < ApplicationController
   before_action :set_granny, only: [:show, :edit, :update, :destroy]
 
-  # skip_after_action :verify_authorized, only: :index, unless: :skip_pundit?
-  # skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
-  
   def index
     @grannies = policy_scope(Granny)
   end

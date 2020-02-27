@@ -2,7 +2,18 @@
   <div class="container">
     <h1><strong>Get-a-Granny</strong> helps you find lovely elderly in your district!</h1>
     <p>Find a Granny for any occasion.</p>
-    <%= link_to 'Find one now!', grannies_path, class: "btn btn-gradient" %>
+    <%#= link_to 'Find one now!', grannies_path, class: "btn btn-gradient" %>
+
+  <%= form_tag grannies_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Enter your district"
+  %>
+  <%= submit_tag "Search", class: "btn btn-gradient" %>
+  <% end %>
+
+
   </div>
 </div>
 <div class="container">

@@ -3,6 +3,11 @@ class GranniesController < ApplicationController
 
   def index
     @grannies = policy_scope(Granny)
+    if params[:query].present?
+      @grannies = Granny.where(district: params[:query])
+    else
+      @grannies = Granny.all
+    end
   end
 
   def show

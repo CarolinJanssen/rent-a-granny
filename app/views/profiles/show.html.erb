@@ -32,7 +32,7 @@
           <div class="card-deck">
           <% @user.grannies.each do |granny| %>
             <div class="card mb-4">
-              <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
+              <%= cl_image_tag granny.photo.key, height: 138, width: 244, crop: :fill %>
               <div class="card-body">
                 <h5 class="card-title"> <%= granny.first_name %></h5>
                 <p class="card-text"> Age: <%=granny.age%></p>

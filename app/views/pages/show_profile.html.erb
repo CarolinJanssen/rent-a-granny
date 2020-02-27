@@ -9,11 +9,11 @@
         </div>
         <div class="col-md-10 text-justify pl-1 pr-4">
           <div class="d-flex justify-content-between mr-0">
-            <h3>This is your Profile, <%=@user.first_name %></h3>
-            <%= link_to 'Edit Profile', profile_edit_path, class: "btn btn-gradient" %>
+            <h3>This is your Profile, <%=@user.profile.first_name %></h3>
+            <%= link_to 'Edit Profile', profiles_path, class: "btn btn-gradient" %>
           </div>
-          <p><strong>Full name:</strong> <%=@user.first_name %> <%=@user.last_name %></p>
-          <p><strong>Number of kids:</strong> <%=@user.number_of_kids %> </p>
+          <p><strong>Full name:</strong> <%=@profile.first_name %> <%=@profile.last_name %></p>
+          <p><strong>Number of kids:</strong> <%=@profile.number_of_kids %> </p>
           <p><strong>District:</strong> Kreuzberg </p>
           <p><strong>Description:</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." </p>
         </div>
@@ -30,7 +30,7 @@
           <%= link_to 'Add Granny', new_granny_path, class: "btn btn-gradient mr-2" %>
         </div>
           <div class="card-deck">
-          <% @user.grannies.each do |granny| %>
+          <% @profile.grannies.each do |granny| %>
             <div class="card mb-4">
               <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
               <div class="card-body">

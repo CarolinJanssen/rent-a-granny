@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_profile, only: [:show, :edit, :update]
   # Currently valid profile controller
   # authorize under #show
 
@@ -45,11 +45,11 @@ class ProfilesController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :number_of_kids)
+  def profile_params
+    params.require(:profile).permit(:first_name, :last_name, :number_of_kids)
   end
 
-  def set_user
+  def set_profile
     @user = current_user
     authorize @user
   end

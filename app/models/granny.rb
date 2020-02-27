@@ -2,7 +2,7 @@ class Granny < ApplicationRecord
   has_many :appointments
   belongs_to :activity
   belongs_to :user
-  # has_one_attached :photo
+  has_one_attached :photo
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -12,4 +12,3 @@ class Granny < ApplicationRecord
   validates :price, presence: true, numericality: { only_integer: true }
   validates :age, presence: true, numericality: { only_integer: true }
 end
-# :photo

@@ -3,6 +3,7 @@ class Profile < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :appointments
   belongs_to :user
+  has_one_attached :photo
 
   validates :last_name, presence: true
   validates :activity_id, presence: true
@@ -12,4 +13,3 @@ class Profile < ApplicationRecord
   validates :description, presence: true
   validates :important_notes, presence: true
 end
-# :photo

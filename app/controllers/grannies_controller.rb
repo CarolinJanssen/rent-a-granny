@@ -52,7 +52,7 @@ class GranniesController < ApplicationController
   private
 
   def granny_params
-    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :photo)
+    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :photo, :district, :description, :important_notes, :price)
   end
 
   def set_granny

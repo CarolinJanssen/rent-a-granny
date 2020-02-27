@@ -9,8 +9,7 @@
         </div>
         <div class="col-md-6 text-justify">
           <h3>This is Granny <%=@granny.first_name %>'s Profile</h3>
-          <p><strong>First name:</strong> <%=@granny.first_name %></p>
-          <p><strong>Last name:</strong> <%=@granny.last_name %></p>
+          <p><strong>Full name:</strong> <%=@granny.first_name %> <%=@granny.last_name %></p>
           <p><strong>Age:</strong> <%=@granny.age %></p>
           <p><strong>District:</strong> Kreuzberg </p>
           <p><strong>Description:</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." </p>
@@ -25,15 +24,11 @@
               <p><strong>Service Fee</strong></p>
               <p>9,99€</p>
             </div>
-            <div class="d-flex justify-content-between mt-3 border-bottom ">
-              <p><strong>Happy Kids</strong></p>
-              <p>free</p>
-            </div>
             <div class="d-flex justify-content-between mt-3">
               <p><strong>Total</strong></p>
               <p><strong>59,99€</strong></p>
             </div>
-            <a href="#" class="btn btn-gradient w-100">Book now!</a>
+            <%= render 'appointments/new' %>
           </div>
         </div>
         <div class="col-md-8">
@@ -51,3 +46,6 @@
     </div>
   </div>
 </div>
+
+
+  

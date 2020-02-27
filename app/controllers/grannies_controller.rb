@@ -1,12 +1,16 @@
 class GranniesController < ApplicationController
   before_action :set_granny, only: [:show, :edit, :update, :destroy]
 
+  # skip_after_action :verify_authorized, only: :index, unless: :skip_pundit?
+  # skip_after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
+  
   def index
     @grannies = policy_scope(Granny)
   end
 
   def show
     authorize @granny
+    @appointment = Appointment.new
   end
 
   def new
@@ -18,6 +22,7 @@ class GranniesController < ApplicationController
   def create
     @granny = Granny.new(granny_params)
     authorize @granny
+    @granny.user = current_user
     if @granny.save
       redirect_to granny_path(@granny)
     else
@@ -40,7 +45,7 @@ class GranniesController < ApplicationController
 
   def destroy
     @granny.destroy
-    redirect_to grannies_path
+    redirect_to profile_path(current_user)
     authorize @granny
   end
 

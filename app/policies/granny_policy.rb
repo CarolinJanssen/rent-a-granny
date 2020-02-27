@@ -20,4 +20,8 @@ class GrannyPolicy < ApplicationPolicy
   def edit?
     record.user == user
   end
+
+  def destroy?
+    true
+  end
 end

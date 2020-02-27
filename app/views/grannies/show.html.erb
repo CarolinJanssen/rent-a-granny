@@ -5,20 +5,20 @@
     <div class="card p-3 mb-3">
       <div class="row">
         <div class="col-md-2">
-          <img src="https://images.pexels.com/photos/3171128/pexels-photo-3171128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="w-100 rounded">
+          <%= cl_image_tag @granny.photo.key, height: 230, width: 150, crop: :fill %>
         </div>
         <div class="col-md-6 text-justify">
           <h3>This is Granny <%=@granny.first_name %>'s Profile</h3>
           <p><strong>Full name:</strong> <%=@granny.first_name %> <%=@granny.last_name %></p>
           <p><strong>Age:</strong> <%=@granny.age %></p>
-          <p><strong>District:</strong> Kreuzberg </p>
-          <p><strong>Description:</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." </p>
+          <p><strong>District:</strong> <%=@granny.district %> </p>
+          <p><strong>Description:</strong> <%=@granny.description %> </p>
         </div>
         <div class="col-md-4">
           <div class= "bg-white border p-3 sticky-top">
             <div class="d-flex justify-content-between mt-3">
               <p><strong>5 Hours</strong></p>
-              <p>50€</p>
+              <p><%=@granny.price %>,00€</p>
             </div>
             <div class="d-flex justify-content-between mt-3">
               <p><strong>Service Fee</strong></p>
@@ -38,14 +38,10 @@
           </div>
           <div class="text-justify">
             <h2>Important notes</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-            </p>
+            <p><%=@granny.important_notes %></p>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-
-

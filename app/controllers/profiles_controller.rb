@@ -30,7 +30,7 @@ class ProfilesController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
+    @user.update(profile_params)
     if @user.save
       redirect_to profile_path
     else
@@ -46,7 +46,7 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:first_name, :last_name, :number_of_kids)
+    params.require(:user).permit(:first_name, :last_name, :number_of_kids, :photo, :description, :important_notes, :district)
   end
 
   def set_profile

@@ -33,8 +33,12 @@ ActiveRecord::Schema.define(version: 2020_02_25_152111) do
   end
 
   create_table "grannies", force: :cascade do |t|
-    t.text "first_name"
-    t.text "last_name"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "district"
+    t.text "description"
+    t.text "important_notes"
+    t.integer "price"
     t.integer "age"
     t.bigint "user_id"
     t.bigint "activity_id"
@@ -47,9 +51,14 @@ ActiveRecord::Schema.define(version: 2020_02_25_152111) do
   create_table "profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
+    t.string "district"
+    t.text "description"
+    t.text "important_notes"
     t.integer "number_of_kids"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -60,9 +69,6 @@ ActiveRecord::Schema.define(version: 2020_02_25_152111) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "first_name"
-    t.text "last_name"
-    t.integer "number_of_kids"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -71,4 +77,5 @@ ActiveRecord::Schema.define(version: 2020_02_25_152111) do
   add_foreign_key "appointments", "users"
   add_foreign_key "grannies", "activities"
   add_foreign_key "grannies", "users"
+  add_foreign_key "profiles", "users"
 end

@@ -4,9 +4,11 @@
   <div class="container p-3 w-100 ml-4">
     <div class="card p-3 mb-3">
       <div class="row">
-        <div class="col-md-2">
-          <%= cl_image_tag @user.photo.key, height: 209, width: 155, crop: :fill %>
-        </div>
+        <% if @user.photo.attached? %>
+          <div class="col-md-2">
+            <%= cl_image_tag @user.photo.key, height: 209, width: 155, crop: :fill %>
+          </div>
+        <% end %>
         <div class="col-md-10 text-justify pl-1 pr-4">
           <div class="d-flex justify-content-between mr-0">
             <h3>This is your Profile, <%=@user.first_name %></h3>

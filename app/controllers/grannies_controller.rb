@@ -21,6 +21,7 @@ class GranniesController < ApplicationController
   def create
     @granny = Granny.new(granny_params)
     authorize @granny
+    @granny.user = current_user
     if @granny.save
       redirect_to granny_path(@granny)
     else
@@ -43,7 +44,7 @@ class GranniesController < ApplicationController
 
   def destroy
     @granny.destroy
-    redirect_to grannies_path
+    redirect_to profile_path(@granny.profile)
     authorize @granny
   end
 

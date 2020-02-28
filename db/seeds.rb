@@ -24,8 +24,8 @@ puts "Finished"
 Granny.create!(
   first_name: "Eunice",
   last_name: "Blakely",
-  district: "Mitte",
-  description: "Drawing",
+  district: "Kreuzberg",
+  description: "A sensible octogenarian.",
   important_notes: "Bad back",
   price: 20,
   age: 80,
@@ -36,11 +36,11 @@ Granny.create!(
   first_name: "Meryl",
   last_name: "Streep",
   district: "Mitte",
-  description: "Reading",
+  description: "Grand dame of the Stage and Screen who looks after toddlers in her spare time.",
   important_notes: "Please don't ask me to lift more than 5 kg, and please don't ask me to reprise any iconic rôles for your private amusement.",
   price: 23,
   age: 80,
-  activity: reading
+  activity: doing_homework
   )
 
 Granny.create!(
@@ -48,23 +48,23 @@ Granny.create!(
   last_name: "Darcey-Grynnell DBE",
   district: "Mitte",
   # activity: "Doing Homework",
-  description: "Doing Homework",
+  description: "Strict disciplinarian and Dame Commander of the Order of the British Empire",
   important_notes: "No funny stuff!",
   price: 25,
   age: 91,
-  activity: reading
+  activity: crafting
   )
 
 Granny.create!(
-  first_name: "Queen",
-  last_name: "Elisabeth Alexandra Mary Windsor II",
+  first_name: "Queen Elisabeth",
+  last_name: " Alexandra Mary Windsor II",
   district: "Mitte",
   # activity: "Crafting",
-  description: "Crafting",
+  description: "Kind, gentle, and can get any stain out.",
   important_notes: "Apartment is very small, limit 2 children.",
   price: 10,
   age: 76,
-  activity: reading
+  activity: playground
   )
 
 Granny.create!(
@@ -72,7 +72,7 @@ Granny.create!(
   last_name: "Fonda",
   district: "Kreuzberg",
   # activity: "Swimming",
-  description: "Swimming",
+  description: "Jazzercise for tots!",
   important_notes: "No boys, please",
   price: 49,
   age: 89,
@@ -82,13 +82,13 @@ Granny.create!(
 Granny.create!(
   first_name: "The Baronness",
   last_name: "von Freyburg",
-  district: "Mitte",
+  district: "Kreuzberg",
   # activity: "Reading",
-  description: "Reading",
+  description: "I will look after your children with care and diligence.",
   important_notes: "My legs are tricky!",
   price: 25,
   age: 88,
-  activity: reading
+  activity: crafting
   )
 
 

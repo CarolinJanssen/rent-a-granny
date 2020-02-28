@@ -18,13 +18,23 @@
           <div class="flex-fill bd-highlight ml-3"> <%= f.association :activity %> </div>
         </div>
       </div>
-      <%= f.input :description %>
-      <%= f.input :important_notes %>
-      <%= f.input :photo, as: :file %>
-      <br>
-      <div class="row">
-        <div class="col-md-2 text-center bg-white">
-          <%= f.submit "Save changes", class: "btn btn-gradient w-20" %>
+
+      <div class="col-12 col-md-3 mb-3">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="px-xl-3">
+
+              <button class="btn btn-gradient">
+
+                <i class="fa fa-sign-out"></i>
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+
+
         </div>
         <% end %>
       </div>

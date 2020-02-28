@@ -7,6 +7,8 @@
         <div class="col-md-2">
           <% if @granny.photo.attached? %>
             <%= cl_image_tag @granny.photo.key, height: 230, width: 150, crop: :fill %>
+          <% else  %>
+            <img src="https://images.pexels.com/photos/3171128/pexels-photo-3171128.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="" class="w-100 rounded">
           <% end %>
         </div>
         <div class="col-md-6 text-justify">

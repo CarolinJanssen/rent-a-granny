@@ -6,6 +6,11 @@ class GranniesController < ApplicationController
 
   def index
     @grannies = policy_scope(Granny)
+    if params[:query].present?
+      @grannies = Granny.where(district: params[:query])
+    else
+      @grannies = Granny.all
+    end
   end
 
   def show
@@ -22,13 +27,14 @@ class GranniesController < ApplicationController
   def create
     @granny = Granny.new(granny_params)
     authorize @granny
-    @granny.user = current_user
-    if @granny.save!
+    @granny.user_id = current_user.id
+    if @granny.save
       redirect_to granny_path(@granny)
     else
       render :new
     end
   end
+
 
   def edit
     authorize @granny

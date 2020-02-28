@@ -6,21 +6,23 @@
       <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3768129/pexels-photo-3768129.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);">
         <div class="container">
           <h1><strong>Get-a-Granny</strong></h1>
-          <p>Find a Granny for any occasion.</p>
           <%= link_to 'Explore get a granny!', root_path, class: "btn btn-gradient" %>
         </div>
       </div>
     <% else %>
-    <p class = "text-left pt-1 mb-1">Your next amazing moments with your gorgious grannies!</p>
+    <p class = "text-left mb-2">Your next amazing moments with our gorgeous grannies!</p>
       <div class="card-deck">
         <% @future_appointments.each do |appointment| %>
-          <div class="card mt-4 mb-4">
-            <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
+          <div class="card mb-4">
+        <% if appointment.granny.photo.attached? %>
+            <%= cl_image_tag appointment.granny.photo.key, height: 168, width: 298, crop: :fill %>
+        <% end %>
             <div class="card-body">
               <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
               <p> Activity: <%=appointment.granny.activity.name%></p>
               <div>
-              <p> Date: <%= appointment.start_date.to_date %></p>
+              <p> From: <%= appointment.start_date.to_date %></p>
+              <p> To: <%= appointment.end_date.to_date %></p>
               <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
               </div>
             </div>
@@ -28,24 +30,28 @@
         <% end %>
       </div>
     <% end %>
-
-  <h1 class="text-left pt-3 mb-3">Grannies from the past</h1>
-  <p class = "text-left pt-1 mb-1">Which grannies did you book?</p>
-  <div class="card-deck">
-    <% @past_appointments.each do |appointment| %>
-    <div class="card mt-4 mb-4">
-      <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
-        <p> Activity: <%=appointment.granny.activity.name%></p>
-        <div>
-        <p> Date: <%= appointment.start_date.to_date %></p>
-        <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
-        </div>
-      </div>
-    </div>
+    <h1 class="text-left">Past Grannies</h1>
+    <p class = "text-left">Which grannies did you book?</p>
+      <% if @past_appointments.empty? %>
+        <p class = "text-left pt-1 mb-1"> No grannies booked yet</p>
+      <% else %>
+        <div class="card-deck">
+          <% @past_appointments.each do |appointment| %>
+            <% if appointment.granny.photo.attached? %>
+          <div class="card mb-4">
+            <%= cl_image_tag appointment.granny.photo.key, height: 168, width: 298, crop: :fill %>
+            <div class="card-body">
+              <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
+              <p> Activity: <%=appointment.granny.activity.name%></p>
+              <div>
+              <p> From: <%= appointment.start_date.to_date %></p>
+              <p> To: <%= appointment.start_date.to_date %></p>
+              <%= link_to 'Profile Info', granny_path(appointment.granny), class: "btn btn-gradient w-100" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </div>
-
-

@@ -1,8 +1,24 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3768140/pexels-photo-3768140.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
   <div class="container">
     <h1><strong>Get-a-Granny</strong> helps you find lovely elderly in your district!</h1>
-    <p>Find a Granny for any occasion.</p>
-    <%= link_to 'Find one now!', grannies_path, class: "btn btn-gradient" %>
+    <p>Find a Granny for any occasion in Kreuzberg and Mitte.</p>
+    <%#= link_to 'Find one now!', grannies_path, class: "btn btn-gradient" %>
+<div class="row">
+  <div class="col-md-4">
+    <%= form_tag grannies_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Enter your district"
+    %>
+  </div>
+  <div class="col-md-2">
+    <%= submit_tag "Search", class: "btn btn-gradient h-100" %>
+  </div>
+  <% end %>
+
+
+  </div>
   </div>
 </div>
 <div class="container">

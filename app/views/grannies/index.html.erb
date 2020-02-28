@@ -10,7 +10,9 @@
   <div class="card-deck">
     <% @grannies.each do |granny| %>
     <div class="card mb-4">
+      <% if granny.photo.attached? %>
       <%= cl_image_tag granny.photo.key, height: 170, width: 298, crop: :fill %>
+      <% end %>
       <div class="card-body">
         <h5 class="card-title"> <%= granny.first_name %></h5>
         <p class="card-text"> Age: <%=granny.age%></p>

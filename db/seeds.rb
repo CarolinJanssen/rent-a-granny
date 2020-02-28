@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Cleaning database"
+Appointment.destroy_all
 Granny.destroy_all
 Activity.destroy_all if Rails.env.development?
 

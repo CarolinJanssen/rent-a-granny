@@ -23,7 +23,7 @@ class GranniesController < ApplicationController
     @granny = Granny.new(granny_params)
     authorize @granny
     @granny.user = current_user
-    if @granny.save
+    if @granny.save!
       redirect_to granny_path(@granny)
     else
       render :new
@@ -52,7 +52,7 @@ class GranniesController < ApplicationController
   private
 
   def granny_params
-    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :photo)
+    params.require(:granny).permit(:first_name, :last_name, :age, :activity_id, :district, :price, :description, :important_notes, :photo)
   end
 
   def set_granny

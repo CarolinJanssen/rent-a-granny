@@ -14,7 +14,7 @@
     <p class = "text-left pt-1 mb-1">Your next amazing moments with your gorgious grannies!</p>
       <div class="card-deck">
         <% @future_appointments.each do |appointment| %>
-          <div class="card mb-4">
+          <div class="card mt-4 mb-4">
             <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"> <%= appointment.granny.first_name %></h5>
@@ -33,7 +33,7 @@
   <p class = "text-left pt-1 mb-1">Which grannies did you book?</p>
   <div class="card-deck">
     <% @past_appointments.each do |appointment| %>
-    <div class="card mb-4">
+    <div class="card mt-4 mb-4">
       <img class="card-img-top" src="https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"> <%= appointment.granny.first_name %></h5>

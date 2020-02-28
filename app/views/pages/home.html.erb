@@ -4,7 +4,7 @@
     <p>Find a Granny for any occasion in Kreuzberg and Mitte.</p>
     <%#= link_to 'Find one now!', grannies_path, class: "btn btn-gradient" %>
 <div class="row">
-  <div class="col-md-9">
+  <div class="col-md-4">
     <%= form_tag grannies_path, method: :get do %>
     <%= text_field_tag :query,
       params[:query],

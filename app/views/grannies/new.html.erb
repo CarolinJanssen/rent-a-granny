@@ -1,33 +1,40 @@
 <%= render 'shared/navbar' %>
-<div class="row">
-  <%= link_to "Back" , grannies_path, class: "btn btn-gradient w-20 ml-5 mr-0 mt-3"%>
-	<div class="banner h-4" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.pexels.com/photos/302083/pexels-photo-302083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
-	  <h2 class="granny_header">Your Granny:</h2>
-	</div>
+<div>
+  <div class="banner h-4" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.pexels.com/photos/302083/pexels-photo-302083.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);">
+    <h2 class="granny_header">Your Granny:</h2>
+  </div>
 </div>
 
 <div class="container">
   <div class="card p-5">
     <div class="text-align-center">
       <%= simple_form_for @granny do |f| %>
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :age %>
-      <%= f.input :district %>
+      <div class="flex-fill row justify-content-between ml-0 mr-0 bg-white">
+        <div class="flex-fill bd-highlight mr-3"> <%= f.input :first_name %> </div>
+        <div class="flex-fill bd-highlight ml-3"> <%= f.input :last_name %> </div>
+      </div>
+      <div class="flex-fill row justify-content-between ml-0 mr-0 bg-white">
+        <div class="flex-fill bd-highlight mr-3"> <%= f.input :age %> </div>
+        <div class="flex-fill bd-highlight ml-3 mr-2"> <%= f.input :district %> </div>
+        <div class="flex-fill bd-highlight ml-4"> <%= f.input :price %> </div>
+      </div>
       <%= f.input :description %>
       <%= f.input :important_notes %>
-      <%= f.input :price %>
-      <%= f.input :photo, as: :file %>
-      <%= f.association :activity %>
+      <div class="flex-fill row justify-content-between bg-white ml-0 mr-0">
+        <div class="flex-fill bd-highlight mr-5"> <%= f.association :activity %> </div>
+        <div class="flex-fill bd-highlight pl-5 ml-5"> <%= f.input :photo, as: :file %> </div>
+      </div>
       <br>
       <div class="row">
         <div class="col-md-2">
-      		<%= f.submit "Add Your Granny", class: "btn btn-gradient w-20" %>
-  			</div>
+          <%= f.submit "Add Your Granny", class: "btn btn-gradient w-20" %>
+        </div>
+        <div class="col-md-8">
+        </div>
         <div class="col-md-2">
-     		  <%= link_to 'Back', grannies_path, class: "btn btn-gradient w-20 ml-5" %>
-  			</div>
-  		</div>
+          <%= link_to 'Back', grannies_path, class: "btn btn-gradient w-20 ml-5" %>
+        </div>
+      </div>
       <% end %>
     </div>
   </div>

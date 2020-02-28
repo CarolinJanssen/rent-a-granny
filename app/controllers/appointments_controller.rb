@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
     @appointment.granny = @granny
     @appointment.user = current_user
       if @appointment.save!
-        redirect_to grannies_path
+        redirect_to dashboard_path
       else
         render 'grannies/new'
     end

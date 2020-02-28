@@ -4,9 +4,11 @@
   <div class="container p-3 w-100 ml-4">
     <div class="card p-3 mb-3">
       <div class="row">
-        <div class="col-md-2">
-          <%= cl_image_tag @user.photo.key, height: 209, width: 155, crop: :fill %>
-        </div>
+        <% if @user.photo.attached? %>
+          <div class="col-md-2">
+            <%= cl_image_tag @user.photo.key, height: 209, width: 155, crop: :fill %>
+          </div>
+        <% end %>
         <div class="col-md-10 text-justify pl-1 pr-4">
           <div class="d-flex justify-content-between mr-0">
             <h3>This is your Profile, <%=@user.first_name %></h3>
@@ -15,16 +17,16 @@
           <p><strong>Full name:</strong> <%=@user.first_name %> <%=@user.last_name %></p>
           <p><strong>Number of kids:</strong> <%=@user.number_of_kids %> </p>
           <p><strong>District:</strong> <%=@user.district %> </p>
-          <p><strong>Description:</strong> "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." </p>
+          <p><strong>Description:</strong> <%=@user.description %> </p>
         </div>
         <div class="col-md-12 pl-3 pr-4">
-          <div class="text-justify">
+          <div class="text-justify mt-3">
             <h2>Important notes</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+            <p><%=@user.important_notes %> </p>
           </div>
         </div>
       </div>
-      <div class="text-justify">
+      <div class="text-justify mt-3">
         <div class="d-flex justify-content-between">
           <h2>Your Grannies:</h2>
           <%= link_to 'Add Granny', new_granny_path, class: "btn btn-gradient mr-2" %>

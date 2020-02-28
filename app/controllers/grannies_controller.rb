@@ -24,13 +24,14 @@ class GranniesController < ApplicationController
   def create
     @granny = Granny.new(granny_params)
     authorize @granny
-    @granny.user = current_user
+    @granny.user_id = current_user.id
     if @granny.save
       redirect_to granny_path(@granny)
     else
       render :new
     end
   end
+
 
   def edit
     authorize @granny

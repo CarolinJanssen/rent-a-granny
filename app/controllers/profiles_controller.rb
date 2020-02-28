@@ -4,11 +4,13 @@ class ProfilesController < ApplicationController
   # authorize under #show
 
 # No need to display all the parents etc.:
-  # def index
-  #   @users = policy_scope(User)
-  # end
+  def index
+    @users = policy_scope(User)
+  end
 
   def show
+    @grannies = @user.grannies
+
   end
 
 # these are covered under devise:

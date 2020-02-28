@@ -5,8 +5,6 @@ import 'flatpickr/dist/flatpickr.min.css'
 
 flatpickr(".datepicker", {});
 
-import flatpickr from 'flatpickr';
-
 const toggleDateInputs = function() {
   const startDateInput = document.getElementById('booking_start_date');
   const endDateInput = document.getElementById('booking_end_date');
@@ -33,7 +31,7 @@ const toggleDateInputs = function() {
         dateFormat: 'd-m-Y',
         disable: unvailableDates,
         },
-      });
+      );
   }
 };
 

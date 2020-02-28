@@ -13,12 +13,6 @@ class ApplicationController < ActionController::Base
   #   redirect_to(root_path)
   # end
 
-  belongs_to : granny:, #counter_cache: true
-  belongs_to :user
-
-  validates :start_date, :end_date, presence: true, availability: true
-  validate :end_date_after_start_date
-
   private
 
   def end_date_after_start_date
@@ -27,8 +21,7 @@ class ApplicationController < ActionController::Base
     if end_date < start_date
       errors.add(:end_date, "must be after the start date")
     end
- end
-end
+  end
 
   private
 

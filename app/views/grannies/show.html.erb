@@ -21,16 +21,8 @@
         <div class="col-md-4">
           <div class= "bg-white border p-3 sticky-top">
             <div class="d-flex justify-content-between mt-3">
-              <p><strong>5 Hours</strong></p>
-              <p><%=@granny.price %>,00€</p>
-            </div>
-            <div class="d-flex justify-content-between mt-3">
-              <p><strong>Service Fee</strong></p>
-              <p>9,99€</p>
-            </div>
-            <div class="d-flex justify-content-between mt-3">
               <p><strong>Total</strong></p>
-              <p><strong>59,99€</strong></p>
+              <p><strong><%=@granny.price %>,00€ %></strong></p>
             </div>
             <%= render 'appointments/new', granny: @granny, appointment: @appointment %>
           </div>

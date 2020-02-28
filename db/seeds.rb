@@ -101,13 +101,13 @@ granny2.photo.attach(io: file2, filename: 'test2.jpg', content_type: 'image/jpg'
 file3 = URI.open('https://i.dailymail.co.uk/i/pix/2012/08/17/article-0-149777C7000005DC-552_634x416.jpg')
 granny3.photo.attach(io: file3, filename: 'test3.jpg', content_type: 'image/jpg')
 
-file4 = URI.open('https://lotsahelpinghands.com/wp-content/uploads/2015/07/help-children-learn-600.jpg')
+file4 = URI.open('https://www.cheatsheet.com/wp-content/uploads/2020/02/Queen-Elizabeth-II-1-1024x683.jpg')
 granny4.photo.attach(io: file4, filename: 'test4.jpg', content_type: 'image/jpg')
 
 file5 = URI.open('https://vesti.kz/userdata/news/news_171678/crop4_b/photo_22212.jpg')
 granny5.photo.attach(io: file5, filename: 'test5.jpg', content_type: 'image/jpg')
 
-file6 = URI.open('https://www.cheatsheet.com/wp-content/uploads/2020/02/Queen-Elizabeth-II-1-1024x683.jpg')
+file6 = URI.open('https://lotsahelpinghands.com/wp-content/uploads/2015/07/help-children-learn-600.jpg')
 granny6.photo.attach(io: file6, filename: 'test6.jpg', content_type: 'image/jpg')
 
 puts "Finished!"

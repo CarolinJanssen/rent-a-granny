@@ -7,7 +7,7 @@
 
 <div class="container col-md-11 mt-3">
   <h4 class="mb-3"><%=@grannies.length%> available in 
-  <% if params[:query].empty? %>
+  <% if params[:query] == nil || params[:query].empty? %>
     Berlin 
   <% else %>
     <%= params[:query]%>

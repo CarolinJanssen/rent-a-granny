@@ -1,10 +1,5 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
 puts "Cleaning database"
 Appointment.destroy_all
 Granny.destroy_all
@@ -22,7 +17,8 @@ puts "Finished"
 
 # p 'seeds done right'
 
-Granny.create!(
+
+granny1 = Granny.create!(
   first_name: "Eunice",
   last_name: "Blakely",
   district: "Kreuzberg",
@@ -32,8 +28,8 @@ Granny.create!(
   age: 80,
   activity: reading
   )
-
-Granny.create!(
+puts "Tested!"
+granny2 = Granny.create!(
   first_name: "Meryl",
   last_name: "Streep",
   district: "Mitte",
@@ -44,7 +40,7 @@ Granny.create!(
   activity: doing_homework
   )
 
-Granny.create!(
+granny3 = Granny.create!(
   first_name: "Rosemary",
   last_name: "Darcey-Grynnell DBE",
   district: "Mitte",
@@ -56,7 +52,7 @@ Granny.create!(
   activity: crafting
   )
 
-Granny.create!(
+granny4 = Granny.create!(
   first_name: "Queen Elisabeth",
   last_name: " Alexandra Mary Windsor II",
   district: "Mitte",
@@ -68,7 +64,7 @@ Granny.create!(
   activity: playground
   )
 
-Granny.create!(
+granny5 = Granny.create!(
   first_name: "Jane",
   last_name: "Fonda",
   district: "Kreuzberg",
@@ -80,7 +76,7 @@ Granny.create!(
   activity: reading
   )
 
-Granny.create!(
+granny6 = Granny.create!(
   first_name: "The Baronness",
   last_name: "von Freyburg",
   district: "Kreuzberg",
@@ -92,12 +88,33 @@ Granny.create!(
   activity: crafting
   )
 
+puts "finished"
 
+puts "Adding pictures"
+file = URI.open('https://www.newtimes.co.rw/sites/default/files/styles/mystyle/public/main/articles/2015/11/18/1447873393o-GRANDPARENTS-facebook.jpg')
+granny1.photo.attach(io: file, filename: 'test.jpg', content_type: 'image/jpg')
+# image_1 = File.open('/Users/chora/code/elmochuelo/rent-a-granny/app/assets/images/
+# grandmother1.jpg')
+file2 = URI.open('https://s3-eu-west-1.amazonaws.com/iya-ghost-prod.inyourarea.co.uk/2017/12/Gladys-Goodwin.jpg')
+granny2.photo.attach(io: file2, filename: 'test2.jpg', content_type: 'image/jpg')
+
+file3 = URI.open('https://i.dailymail.co.uk/i/pix/2012/08/17/article-0-149777C7000005DC-552_634x416.jpg')
+granny3.photo.attach(io: file3, filename: 'test3.jpg', content_type: 'image/jpg')
+
+file4 = URI.open('https://www.cheatsheet.com/wp-content/uploads/2020/02/Queen-Elizabeth-II-1-1024x683.jpg')
+granny4.photo.attach(io: file4, filename: 'test4.jpg', content_type: 'image/jpg')
+
+file5 = URI.open('https://vesti.kz/userdata/news/news_171678/crop4_b/photo_22212.jpg')
+granny5.photo.attach(io: file5, filename: 'test5.jpg', content_type: 'image/jpg')
+
+file6 = URI.open('https://lotsahelpinghands.com/wp-content/uploads/2015/07/help-children-learn-600.jpg')
+granny6.photo.attach(io: file6, filename: 'test6.jpg', content_type: 'image/jpg')
+
+puts "Finished!"
 
 # granny_1.activity = drawing
 
 
-puts "Finished"
 # granny_2.save!
 
 # granny_1.user = user_1
